@@ -1,11 +1,12 @@
-﻿using System;
+﻿using P04Zawodnicy.Shared.Domain;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P03ZawodnicyCRUD
+namespace P04Zawodnicy.Shared.Services
 {
     public class ManagerZawodnikow
     {

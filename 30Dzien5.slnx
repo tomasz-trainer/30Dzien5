@@ -2,4 +2,6 @@
   <Project Path="P01NoweOkna/P01NoweOkna.csproj" />
   <Project Path="P02ZawodnicyNoweOkna/P02ZawodnicyNoweOkna.csproj" />
   <Project Path="P03ZawodnicyCRUD/P03ZawodnicyCRUD.csproj" />
+  <Project Path="P04Zawodnicy.Shared/P04Zawodnicy.Shared.csproj" />
+  <Project Path="P05TworzeniePDF/P05TworzeniePDF.csproj" />
 </Solution>

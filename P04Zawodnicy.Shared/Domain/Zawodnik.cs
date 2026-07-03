@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P03ZawodnicyCRUD
+namespace P04Zawodnicy.Shared.Domain
 {
     public class Zawodnik
     {
