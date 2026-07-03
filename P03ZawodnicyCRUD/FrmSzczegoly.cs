@@ -29,8 +29,9 @@ namespace P03ZawodnicyCRUD
         }
 
 
-        public FrmSzczegoly(TrybOkna trybOkna, Zawodnik zawodnik)
+        public FrmSzczegoly(TrybOkna trybOkna, ManagerZawodnikow mz, Zawodnik zawodnik)
         {
+            this.mz = mz;
             InitializeComponent();
 
             this.trybOkna = trybOkna;
@@ -60,7 +61,7 @@ namespace P03ZawodnicyCRUD
         private void EdytujZawodnika()
         {
             zczytajDaneZFormularza(zawodnik);
-
+            mz.Edytuj(zawodnik);
         }
 
         private void DodajZawodnika()
