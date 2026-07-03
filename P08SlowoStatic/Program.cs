@@ -42,6 +42,16 @@ namespace P08SlowoStatic
             Console.WriteLine(z.PrzedstawSie());
 
             Zawodnik.PowiedzKimJest();
+
+
+            //Console.WriteLine();
+
+            //Console c1 = new Console();
+            //c1.WriteLine();
+
+
+            //Console c2 = new Console();
+            //c2.WriteLine();
         }
     }
 }
