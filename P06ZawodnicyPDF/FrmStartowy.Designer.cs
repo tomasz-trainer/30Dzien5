@@ -33,6 +33,7 @@
             this.cbKraje = new System.Windows.Forms.ComboBox();
             this.btnNowy = new System.Windows.Forms.Button();
             this.btnOdswiez = new System.Windows.Forms.Button();
+            this.btnGenerujPDF = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbDane
@@ -82,11 +83,22 @@
             this.btnOdswiez.UseVisualStyleBackColor = true;
             this.btnOdswiez.Click += new System.EventHandler(this.btnOdswiez_Click);
             // 
+            // btnGenerujPDF
+            // 
+            this.btnGenerujPDF.Location = new System.Drawing.Point(295, 142);
+            this.btnGenerujPDF.Name = "btnGenerujPDF";
+            this.btnGenerujPDF.Size = new System.Drawing.Size(75, 23);
+            this.btnGenerujPDF.TabIndex = 12;
+            this.btnGenerujPDF.Text = "Raport PDF";
+            this.btnGenerujPDF.UseVisualStyleBackColor = true;
+            this.btnGenerujPDF.Click += new System.EventHandler(this.btnGenerujPDF_Click);
+            // 
             // FrmStartowy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(392, 262);
+            this.Controls.Add(this.btnGenerujPDF);
             this.Controls.Add(this.btnOdswiez);
             this.Controls.Add(this.btnNowy);
             this.Controls.Add(this.cbKraje);
@@ -105,6 +117,7 @@
         private System.Windows.Forms.ComboBox cbKraje;
         private System.Windows.Forms.Button btnNowy;
         private System.Windows.Forms.Button btnOdswiez;
+        private System.Windows.Forms.Button btnGenerujPDF;
     }
 }
 
