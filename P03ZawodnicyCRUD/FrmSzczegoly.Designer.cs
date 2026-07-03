@@ -1,4 +1,4 @@
-﻿namespace P02ZawodnicyNoweOkna
+﻿namespace P03ZawodnicyCRUD
 {
     partial class FrmSzczegoly
     {

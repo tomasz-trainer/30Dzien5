@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace P02ZawodnicyNoweOkna
+namespace P03ZawodnicyCRUD
 {
     public partial class FrmStartowy : Form
     {

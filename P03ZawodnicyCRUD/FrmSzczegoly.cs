@@ -8,11 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace P02ZawodnicyNoweOkna
+namespace P03ZawodnicyCRUD
 {
+
+    public enum TrybOkna
+    {
+        Dodawanie,
+        Edycja
+    }
+
     public partial class FrmSzczegoly : Form
     {
         ManagerZawodnikow mz;
+        TrybOkna trybOkna;
+        Zawodnik zawodnik;
         public FrmSzczegoly(ManagerZawodnikow mz)
         {
             this.mz = mz;
@@ -24,6 +33,7 @@ namespace P02ZawodnicyNoweOkna
         {
             InitializeComponent();
 
+            this.zawodnik = zawodnik;
             txtImie.Text = zawodnik.Imie;
             txtNazwisko.Text = zawodnik.Nazwisko;
             txtKraj.Text = zawodnik.Kraj;
@@ -34,17 +44,39 @@ namespace P02ZawodnicyNoweOkna
 
         private void btnZapisz_Click(object sender, EventArgs e)
         {
-            Zawodnik zawodnik = new Zawodnik
+            if (trybOkna == TrybOkna.Dodawanie)
             {
-                Imie = txtImie.Text,
-                Nazwisko = txtNazwisko.Text,
-                Kraj = txtKraj.Text,
-                DataUrodzenia = dtpDataUr.Value,
-                Wzrost = (int)numWzrost.Value,
-                Waga = (int)numWaga.Value
-            };
-             
+                DodajZawodnika();
+            }
+            else if (trybOkna == TrybOkna.Edycja)
+            {
+                EdytujZawodnika();
+            }
+
+
+        }
+
+        private void EdytujZawodnika()
+        {
+            zczytajDaneZFormularza(zawodnik);
+
+        }
+
+        private void DodajZawodnika()
+        {
+            Zawodnik zawodnik = new Zawodnik();
+            zczytajDaneZFormularza(zawodnik);
             mz.Dodaj(zawodnik);
+        }
+
+        private void zczytajDaneZFormularza(Zawodnik zawodnik)
+        {
+            zawodnik.Imie = txtImie.Text;
+            zawodnik.Nazwisko = txtNazwisko.Text;
+            zawodnik.Kraj = txtKraj.Text;
+            zawodnik.DataUrodzenia = dtpDataUr.Value;
+            zawodnik.Wzrost = (int)numWzrost.Value;
+            zawodnik.Waga = (int)numWaga.Value;
         }
     }
 }
