@@ -12,6 +12,14 @@ namespace P02ZawodnicyNoweOkna
 {
     public partial class FrmSzczegoly : Form
     {
+        ManagerZawodnikow mz;
+        public FrmSzczegoly(ManagerZawodnikow mz)
+        {
+            this.mz = mz;
+            InitializeComponent();
+        }
+
+
         public FrmSzczegoly(Zawodnik zawodnik)
         {
             InitializeComponent();
@@ -22,6 +30,21 @@ namespace P02ZawodnicyNoweOkna
             dtpDataUr.Value = zawodnik.DataUrodzenia;
             numWzrost.Value = zawodnik.Wzrost;
             numWaga.Value = zawodnik.Waga;
+        }
+
+        private void btnZapisz_Click(object sender, EventArgs e)
+        {
+            Zawodnik zawodnik = new Zawodnik
+            {
+                Imie = txtImie.Text,
+                Nazwisko = txtNazwisko.Text,
+                Kraj = txtKraj.Text,
+                DataUrodzenia = dtpDataUr.Value,
+                Wzrost = (int)numWzrost.Value,
+                Waga = (int)numWaga.Value
+            };
+             
+            mz.Dodaj(zawodnik);
         }
     }
 }

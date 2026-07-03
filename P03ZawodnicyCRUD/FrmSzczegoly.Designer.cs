@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtImie = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnZapisz = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numWaga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWzrost)).BeginInit();
             this.SuspendLayout();
@@ -146,11 +147,22 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Imie";
             // 
+            // btnZapisz
+            // 
+            this.btnZapisz.Location = new System.Drawing.Point(102, 255);
+            this.btnZapisz.Name = "btnZapisz";
+            this.btnZapisz.Size = new System.Drawing.Size(75, 23);
+            this.btnZapisz.TabIndex = 27;
+            this.btnZapisz.Text = "Zapisz";
+            this.btnZapisz.UseVisualStyleBackColor = true;
+            this.btnZapisz.Click += new System.EventHandler(this.btnZapisz_Click);
+            // 
             // FrmSzczegoly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(204, 270);
+            this.ClientSize = new System.Drawing.Size(204, 293);
+            this.Controls.Add(this.btnZapisz);
             this.Controls.Add(this.numWaga);
             this.Controls.Add(this.numWzrost);
             this.Controls.Add(this.dtpDataUr);
@@ -186,5 +198,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtImie;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnZapisz;
     }
 }

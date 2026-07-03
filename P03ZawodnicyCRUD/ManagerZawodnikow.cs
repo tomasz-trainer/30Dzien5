@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace P02ZawodnicyNoweOkna
 {
-    internal class ManagerZawodnikow
+    public class ManagerZawodnikow
     {
-        private Zawodnik[] zawodnicyCache;
-
+        private List<Zawodnik> zawodnicyCache;
+        private string sciezka;
 
         public Zawodnik[] WczytajZawodnikow(string sciezka)
         {
-
+            this.sciezka = sciezka;
             //string[] wiersze = File.ReadAllText(sciezka).Split(new string[1] {"\r\n"},StringSplitOptions.RemoveEmptyEntries);
             string[] wiersze =  File.ReadAllLines(sciezka);
 
@@ -39,7 +39,7 @@ namespace P02ZawodnicyNoweOkna
                 zawodnicy[i - 1] = z;
 
             }
-            zawodnicyCache = zawodnicy;
+            zawodnicyCache = zawodnicy.ToList();
             return zawodnicy;
         }
 
@@ -104,6 +104,36 @@ namespace P02ZawodnicyNoweOkna
                     }
                 }
             }
+        }
+
+        public void Dodaj(Zawodnik zawodnik)
+        {
+            int maksId = 0;
+            foreach (var z in zawodnicyCache)
+                if (z.Id_zawodnika > maksId)
+                    maksId = z.Id_zawodnika;
+
+            zawodnik.Id_zawodnika = maksId+1;
+            zawodnicyCache.Add(zawodnik);
+
+            zapisz();
+        }
+
+        private void zapisz()
+        {
+            string naglowek = "id_zawodnika,id_trenera,imie,nazwisko,kraj,data_ur,wzrost,waga";
+            string szablon = "{0},{1},{2},{3},{4},{5},{6},{7}";
+
+            StringBuilder sb = new StringBuilder(naglowek + Environment.NewLine);
+            foreach (var z in zawodnicyCache)
+            {
+                string wiersz = string.Format(szablon,
+                    z.Id_zawodnika,z.Id_trenera, z.Imie, z.Nazwisko, z.Kraj,
+                    z.DataUrodzenia.ToString("yyyy-MM-dd"), z.Wzrost, z.Waga);
+
+                sb.AppendLine(wiersz);
+            }
+            File.WriteAllText(sciezka, sb.ToString(),Encoding.UTF8);
         }
     }
 }

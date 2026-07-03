@@ -43,5 +43,11 @@ namespace P02ZawodnicyNoweOkna
             lbDane.DataSource = mz.PodajZawodnikow(zaznaczonyKraj);
             lbDane.DisplayMember = "ImieNazwisko";
         }
+
+        private void btnNowy_Click(object sender, EventArgs e)
+        {
+            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(mz);
+            frmSzczegoly.Show();
+        }
     }
 }
