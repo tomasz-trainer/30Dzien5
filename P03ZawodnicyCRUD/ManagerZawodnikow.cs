@@ -119,16 +119,16 @@ namespace P03ZawodnicyCRUD
             zapisz();
         }
 
+        public void Usun(Zawodnik zawodnik)
+        {
+            Zawodnik zawodnikDoUsuniecia = wyszukajZawodnika(zawodnik);
+            zawodnicyCache.Remove(zawodnikDoUsuniecia);
+            zapisz();
+        }
+
         public void Edytuj(Zawodnik zawodnik)
         {
-            int idEdytowanego = zawodnik.Id_zawodnika;
-            Zawodnik zawodnikDoEdycji = null;
-            foreach (var z in zawodnicyCache)
-                if (z.Id_zawodnika == idEdytowanego)
-                {
-                    zawodnikDoEdycji = z;
-                    break;
-                }
+            Zawodnik zawodnikDoEdycji = wyszukajZawodnika(zawodnik);
 
             zawodnikDoEdycji.Id_trenera = zawodnik.Id_trenera;
             zawodnikDoEdycji.Imie = zawodnik.Imie;
@@ -140,7 +140,20 @@ namespace P03ZawodnicyCRUD
 
             zapisz();
         }
-       
+
+        private Zawodnik wyszukajZawodnika(Zawodnik zawodnik)
+        {
+            int idEdytowanego = zawodnik.Id_zawodnika;
+            Zawodnik zawodnikDoEdycji = null;
+            foreach (var z in zawodnicyCache)
+                if (z.Id_zawodnika == idEdytowanego)
+                {
+                    zawodnikDoEdycji = z;
+                    break;
+                }
+
+            return zawodnikDoEdycji;
+        }
 
 
         private void zapisz()

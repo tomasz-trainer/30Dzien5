@@ -83,6 +83,16 @@ namespace P03ZawodnicyCRUD
 
         }
 
+        private void zczytajDaneZFormularza(Zawodnik zawodnik)
+        {
+            zawodnik.Imie = txtImie.Text;
+            zawodnik.Nazwisko = txtNazwisko.Text;
+            zawodnik.Kraj = txtKraj.Text;
+            zawodnik.DataUrodzenia = dtpDataUr.Value;
+            zawodnik.Wzrost = (int)numWzrost.Value;
+            zawodnik.Waga = (int)numWaga.Value;
+        }
+
         private void EdytujZawodnika()
         {
             zczytajDaneZFormularza(zawodnik);
@@ -96,19 +106,11 @@ namespace P03ZawodnicyCRUD
             mz.Dodaj(zawodnik);
         }
 
-        private void zczytajDaneZFormularza(Zawodnik zawodnik)
-        {
-            zawodnik.Imie = txtImie.Text;
-            zawodnik.Nazwisko = txtNazwisko.Text;
-            zawodnik.Kraj = txtKraj.Text;
-            zawodnik.DataUrodzenia = dtpDataUr.Value;
-            zawodnik.Wzrost = (int)numWzrost.Value;
-            zawodnik.Waga = (int)numWaga.Value;
-        }
-
         private void btnUsun_Click(object sender, EventArgs e)
         {
-
+            mz.Usun(zawodnik);
+            frmStartowy.OdswiezDane();
+            this.Close();
         }
     }
 }
