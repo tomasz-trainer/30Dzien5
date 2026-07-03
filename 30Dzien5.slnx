@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="P01NoweOkna/P01NoweOkna.csproj" />
   <Project Path="P02ZawodnicyNoweOkna/P02ZawodnicyNoweOkna.csproj" />
+  <Project Path="P03ZawodnicyCRUD/P03ZawodnicyCRUD.csproj" />
 </Solution>
