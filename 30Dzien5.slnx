@@ -5,4 +5,6 @@
   <Project Path="P04Zawodnicy.Shared/P04Zawodnicy.Shared.csproj" />
   <Project Path="P05TworzeniePDF/P05TworzeniePDF.csproj" />
   <Project Path="P06ZawodnicyPDF/P06ZawodnicyPDF.csproj" />
+  <Project Path="P07KonertowanieARzutowanie/P07KonertowanieARzutowanie.csproj" />
+  <Project Path="P08SlowoStatic/P08SlowoStatic.csproj" />
 </Solution>
