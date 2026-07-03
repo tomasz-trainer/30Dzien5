@@ -12,9 +12,19 @@ namespace P02ZawodnicyNoweOkna
 {
     public partial class FrmStartowy : Form
     {
+
         public FrmStartowy()
         {
+
             InitializeComponent();
+
+            ManagerZawodnikow mz = new ManagerZawodnikow();
+            
+            lbDane.DataSource = 
+                mz.WczytajZawodnikow(@"C:\dane\Zawodnicy.txt");
+            lbDane.DisplayMember = "ImieNazwisko";
+
+
         }
 
         private void btnSzczegoly_Click(object sender, EventArgs e)

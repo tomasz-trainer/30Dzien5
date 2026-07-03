@@ -17,7 +17,11 @@ namespace P02ZawodnicyNoweOkna
             InitializeComponent();
 
             txtImie.Text = zawodnik.Imie;
-            
+            txtNazwisko.Text = zawodnik.Nazwisko;
+            txtKraj.Text = zawodnik.Kraj;
+            dtpDataUr.Value = zawodnik.DataUrodzenia;
+            numWzrost.Value = zawodnik.Wzrost;
+            numWaga.Value = zawodnik.Waga;
         }
     }
 }
