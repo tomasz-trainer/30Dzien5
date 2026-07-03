@@ -4,4 +4,5 @@
   <Project Path="P03ZawodnicyCRUD/P03ZawodnicyCRUD.csproj" />
   <Project Path="P04Zawodnicy.Shared/P04Zawodnicy.Shared.csproj" />
   <Project Path="P05TworzeniePDF/P05TworzeniePDF.csproj" />
+  <Project Path="P06ZawodnicyPDF/P06ZawodnicyPDF.csproj" />
 </Solution>
