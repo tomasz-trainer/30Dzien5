@@ -119,6 +119,30 @@ namespace P03ZawodnicyCRUD
             zapisz();
         }
 
+        public void Edytuj(Zawodnik zawodnik)
+        {
+            int idEdytowanego = zawodnik.Id_zawodnika;
+            Zawodnik zawodnikDoEdycji = null;
+            foreach (var z in zawodnicyCache)
+                if (z.Id_zawodnika == idEdytowanego)
+                {
+                    zawodnikDoEdycji = z;
+                    break;
+                }
+
+            zawodnikDoEdycji.Id_trenera = zawodnik.Id_trenera;
+            zawodnikDoEdycji.Imie = zawodnik.Imie;
+            zawodnikDoEdycji.Nazwisko = zawodnik.Nazwisko;
+            zawodnikDoEdycji.Kraj = zawodnik.Kraj;
+            zawodnikDoEdycji.DataUrodzenia = zawodnik.DataUrodzenia;
+            zawodnikDoEdycji.Wzrost = zawodnik.Wzrost;
+            zawodnikDoEdycji.Waga = zawodnik.Waga;
+
+            zapisz();
+        }
+       
+
+
         private void zapisz()
         {
             string naglowek = "id_zawodnika,id_trenera,imie,nazwisko,kraj,data_ur,wzrost,waga";

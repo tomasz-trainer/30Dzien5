@@ -22,17 +22,18 @@ namespace P03ZawodnicyCRUD
         ManagerZawodnikow mz;
         TrybOkna trybOkna;
         Zawodnik zawodnik;
-        public FrmSzczegoly(ManagerZawodnikow mz)
+        public FrmSzczegoly(TrybOkna trybOkna, ManagerZawodnikow mz)
         {
             this.mz = mz;
             InitializeComponent();
         }
 
 
-        public FrmSzczegoly(Zawodnik zawodnik)
+        public FrmSzczegoly(TrybOkna trybOkna, Zawodnik zawodnik)
         {
             InitializeComponent();
 
+            this.trybOkna = trybOkna;
             this.zawodnik = zawodnik;
             txtImie.Text = zawodnik.Imie;
             txtNazwisko.Text = zawodnik.Nazwisko;
