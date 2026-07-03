@@ -22,15 +22,18 @@ namespace P03ZawodnicyCRUD
         ManagerZawodnikow mz;
         TrybOkna trybOkna;
         Zawodnik zawodnik;
-        public FrmSzczegoly(TrybOkna trybOkna, ManagerZawodnikow mz)
+        FrmStartowy frmStartowy;
+        public FrmSzczegoly(TrybOkna trybOkna, ManagerZawodnikow mz, FrmStartowy frmStartowy)
         {
+            this.frmStartowy = frmStartowy;
             this.mz = mz;
             InitializeComponent();
         }
 
 
-        public FrmSzczegoly(TrybOkna trybOkna, ManagerZawodnikow mz, Zawodnik zawodnik)
+        public FrmSzczegoly(TrybOkna trybOkna, ManagerZawodnikow mz, FrmStartowy frmStartowy, Zawodnik zawodnik)
         {
+            this.frmStartowy = frmStartowy;
             this.mz = mz;
             InitializeComponent();
 
@@ -55,6 +58,9 @@ namespace P03ZawodnicyCRUD
                 EdytujZawodnika();
             }
 
+            // wywolaj metode odświeżającą dane w głównym formularzu
+            frmStartowy.OdswiezDane();
+            this.Close();
 
         }
 

@@ -32,6 +32,7 @@
             this.btnSzczegoly = new System.Windows.Forms.Button();
             this.cbKraje = new System.Windows.Forms.ComboBox();
             this.btnNowy = new System.Windows.Forms.Button();
+            this.btnOdswiez = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbDane
@@ -71,11 +72,22 @@
             this.btnNowy.UseVisualStyleBackColor = true;
             this.btnNowy.Click += new System.EventHandler(this.btnNowy_Click);
             // 
+            // btnOdswiez
+            // 
+            this.btnOdswiez.Location = new System.Drawing.Point(296, 113);
+            this.btnOdswiez.Name = "btnOdswiez";
+            this.btnOdswiez.Size = new System.Drawing.Size(75, 23);
+            this.btnOdswiez.TabIndex = 11;
+            this.btnOdswiez.Text = "Odswiez";
+            this.btnOdswiez.UseVisualStyleBackColor = true;
+            this.btnOdswiez.Click += new System.EventHandler(this.btnOdswiez_Click);
+            // 
             // FrmStartowy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(392, 262);
+            this.Controls.Add(this.btnOdswiez);
             this.Controls.Add(this.btnNowy);
             this.Controls.Add(this.cbKraje);
             this.Controls.Add(this.btnSzczegoly);
@@ -92,6 +104,7 @@
         private System.Windows.Forms.Button btnSzczegoly;
         private System.Windows.Forms.ComboBox cbKraje;
         private System.Windows.Forms.Button btnNowy;
+        private System.Windows.Forms.Button btnOdswiez;
     }
 }
 
