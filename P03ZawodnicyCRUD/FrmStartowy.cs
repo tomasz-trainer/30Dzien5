@@ -52,13 +52,13 @@ namespace P03ZawodnicyCRUD
 
         private void btnOdswiez_Click(object sender, EventArgs e)
         {
-            OdswiezDane();
+            OdswiezDane("AUT");
         }
 
-        public void OdswiezDane()
+        public void OdswiezDane(string kraj)
         {
             lbDane.DataSource = null;
-            lbDane.DataSource = mz.PodajZawodnikow("AUT");
+            lbDane.DataSource = mz.PodajZawodnikow(kraj);
             lbDane.DisplayMember = "ImieNazwisko";
         }
     }

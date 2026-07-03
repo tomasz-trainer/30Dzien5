@@ -78,7 +78,7 @@ namespace P03ZawodnicyCRUD
             }
 
             // wywolaj metode odświeżającą dane w głównym formularzu
-            frmStartowy.OdswiezDane();
+            frmStartowy.OdswiezDane(zawodnik.Kraj);
             this.Close();
 
         }
@@ -108,8 +108,9 @@ namespace P03ZawodnicyCRUD
 
         private void btnUsun_Click(object sender, EventArgs e)
         {
+            string kraj = zawodnik.Kraj;
             mz.Usun(zawodnik);
-            frmStartowy.OdswiezDane();
+            frmStartowy.OdswiezDane(kraj);
             this.Close();
         }
     }
